@@ -7,8 +7,8 @@ pipeline {
   stages {
     stage('Checkout SCM') {
       steps {
-        git credentialsId: 'ddcde83f-8153-4a7b-a154-8bb1b5a2c3b5',
-        poll: false, url: 'git@gitlab.com:anup.dubey/nodejs-pipeline.git'
+        git credentialsId: 'ddcde83f-8153-4a7b-a154-8989hkjhshjk',
+        poll: false, url: 'git@hub.com:anup.dubey/nodejs-pipeline.git'
       }
     }
     stage('Install Dependencies') {
