@@ -1,0 +1,32 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /
+    destination: /var/www/nodejs
+
+permissions:
+  - object: /var/www/nodejs
+    pattern: "**"
+    owner: root
+    group: root
+    mode: 644
+    type:
+      - file
+  - object: /var/www/nodejs
+    pattern: "**"
+    owner: root
+    group: root
+    mode: 755
+    type:
+      - directory
+
+hooks:
+  BeforeInstall:
+    - location: scripts/beforeInstall.sh
+      timeout: 120
+      runas: root
+  AfterInstall:
+    - location: scripts/afterInstall.sh
+      timeout: 60
+      runas: root
